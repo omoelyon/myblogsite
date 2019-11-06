@@ -1,18 +1,31 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 	<title>my blog</title>
 </head>
 <body>
-    <div>
+    {% comment %} <div>
         <h1><a>how are you doing</a></h1>
-    </div>
+    </div> {% endcomment %}
+    {% comment %} <div> {% endcomment %}
+        {% for post in posts %}
+        <div>
 
-    <div>
+        <p>published: {{post.publish_date}} </p>
+        <p>author: {{post.author}} </p>
+        <h2><a href="">{{post.title }}</a></h2>
+        <p>{{post.text | linebreaksbr}} </p>
+        </div>
+        {% endfor %}
+    {% comment %} </div> {% endcomment %}
+    
+
+    {% comment %} <div>
     <p>published: 14.06.2014</p>
         <h1><a href="https://www.facebook.com">hello sir, here is am</a></h1>
         <p>thanks for visiting my blog</p>
-    </div>
+    </div> {% endcomment %}
 
 </body>
 </html>
